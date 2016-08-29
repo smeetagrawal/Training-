@@ -1,6 +1,7 @@
 var express = require ('express');
  var app = express();
 
+
  app.get('/',function (req,res)
   {
 
@@ -12,6 +13,8 @@ var express = require ('express');
 
           <form action = '/home'  method = get />
           enter name : <input type = "text" name = "name">
+          enter year  : <input type = "number" name = "age">
+
 
           <input type = "submit" value = "submit" >
 
@@ -24,15 +27,20 @@ var express = require ('express');
 
           `)
 
+ });
+
  app.get('/home',function (req,res)
   {
+          var year = 2016;
+          var w = year - req.query.age ;
 
-         res.send("hello world" + req.query.name );
-
- })
+         res.send("hello world" +  req.query.name + "age  is "  +  w);
 
 
  });
+
+
+
 
  app.listen(3000,function ()
   {
