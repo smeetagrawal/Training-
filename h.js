@@ -31,11 +31,15 @@ var express = require ('express');
 
  app.get('/home',function (req,res)
   {
-          var year = 2016;
-          var w = year - req.query.age ;
+          var year = new Date();
+
+
+
+           var w = year.getFullYear() - req.query.age ;
+
 
          res.send("hello world" +  req.query.name + "age  is "  +  w);
-
+            res.send(w);
 
  });
 
