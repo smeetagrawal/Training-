@@ -33,15 +33,20 @@ app.get('/home',function(req,res)
              {
                   res.send(`<img src = "boy-128.png" >`)
              }
-             else if((req.query.age > 26) && (req.query.age<50))
+             else if((req.query.age >=  26) && (req.query.age<50))
              {
 
                 res.send(`<img src = "male3-128.png" >`)
 
              }
-          else
+          else if((req.query.age >= 50) && (req.query.age <=100))
              {
                res.send(`<img src = "matureman2-128.png" >`)
+
+             }
+             else
+              {
+                          res.send("invalid age");
 
              }
 
